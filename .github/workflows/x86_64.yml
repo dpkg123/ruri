@@ -16,5 +16,6 @@ jobs:
       - name: Check version
         id: check_version
         run: |
-          apt build-dep .
+          apt update
+          apt build-dep . -y
           dpkg-buildpackage -b -us -uc -d
